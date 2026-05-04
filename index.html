@@ -3,246 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Air Europa Vintage - Vuelos Clásicos</title>
+  <title>Air Europa Vintage </title> 
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <header>
-    <div class="logo">
-      <h1>AIR EUROPA</h1>
-      <span class="vintage-label">Vintage Collection</span>
-    </div>
+    <h1>Air Europa <small>Vintage Edition</small></h1>
     <nav>
-      <a href="#buscador">Reservar</a>
-      <a href="#destinos">Destinos</a>
-      <a href="#beneficios">Beneficios</a>
-      <a href="#" class="btn-cuenta">Mi Cuenta</a>
+        <a href="index.html">Inicio</a>
+        <a href="mis-viajes.html">Mis Viajes</a>
+        <button>Crear Cuenta</button>
+        <button>Iniciar Sesión</button>
     </nav>
   </header>
 
   <main>
 
-    <!-- Hero / Buscador -->
-    <section id="buscador" class="hero">
-      <h2>Descubre el placer de volar</h2>
-      <p>Elegancia clásica en cada destino</p>
-
-      <div class="tabs">
-        <button class="tab tab-active">IDA</button>
-        <button class="tab">IDA Y VUELTA</button>
-      </div>
-
-      <form class="search-form">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="origen">Origen</label>
-            <select id="origen" name="origen">
-              <option value="">Seleccionar ciudad de origen</option>
-              <option value="MAD" selected>Madrid (MAD)</option>
-              <option value="BCN">Barcelona (BCN)</option>
-              <option value="PMI">Palma de Mallorca (PMI)</option>
-              <option value="BIO">Bilbao (BIO)</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="destino">Destino</label>
-            <select id="destino" name="destino">
-              <option value="">Seleccionar destino</option>
-              <option value="EZE">Buenos Aires (EZE)</option>
-              <option value="JFK">Nueva York (JFK)</option>
-              <option value="CDG">París (CDG)</option>
-              <option value="FCO">Roma (FCO)</option>
-              <option value="GRU">São Paulo (GRU)</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="fecha-ida">Fecha de ida</label>
-            <input type="date" id="fecha-ida" name="fecha-ida">
-          </div>
-          <div class="form-group">
-            <label for="fecha-vuelta">Fecha de vuelta</label>
-            <input type="date" id="fecha-vuelta" name="fecha-vuelta">
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="pasajeros">Pasajeros</label>
-            <select id="pasajeros" name="pasajeros">
-              <option value="1">1 Pasajero</option>
-              <option value="2">2 Pasajeros</option>
-              <option value="3">3 Pasajeros</option>
-              <option value="4">4 Pasajeros</option>
-              <option value="5">5+ Pasajeros</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="clase">Clase</label>
-            <select id="clase" name="clase">
-              <option value="economy">Económica</option>
-              <option value="premium">Premium Economy</option>
-              <option value="business">Business Class</option>
-              <option value="first">Primera Clase</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-actions">
-          <button type="submit" class="btn-buscar">Buscar Vuelos</button>
-        </div>
-      </form>
+    <section id="buscador">
+        <h2>Busca tu vuelo</h2>
+        <form action="resultados.html">
+            <input type="text" placeholder="Origen" required>
+            <input type="text" placeholder="Destino" required>
+            <input type="date" name="salida">
+            <input type="date" name="regreso">
+            <button type="submit">Buscar Vuelos</button>
+        </form>
     </section>
 
-    <!-- Destinos Destacados -->
-    <section id="destinos" class="destinos">
-      <h2>Destinos Destacados</h2>
-      <p class="section-subtitle">Viajes que cuentan historias</p>
-
-      <div class="destinos-grid">
-
-        <article class="destino-card">
-          <div class="destino-icon">✈</div>
-          <div class="destino-info">
-            <h3>Buenos Aires, Argentina</h3>
-            <p>La magia del tango y la arquitectura europea en Sudamérica.</p>
-            <div class="destino-precio">
-              <span>Desde</span>
-              <strong>€489</strong>
-            </div>
-          </div>
-        </article>
-
-        <article class="destino-card">
-          <div class="destino-icon">🗽</div>
-          <div class="destino-info">
-            <h3>Nueva York, EE.UU.</h3>
-            <p>La ciudad que nunca duerme te espera con los brazos abiertos.</p>
-            <div class="destino-precio">
-              <span>Desde</span>
-              <strong>€359</strong>
-            </div>
-          </div>
-        </article>
-
-        <article class="destino-card">
-          <div class="destino-icon">🏛</div>
-          <div class="destino-info">
-            <h3>Roma, Italia</h3>
-            <p>Historia milenaria, gastronomía sublime y arte en cada esquina.</p>
-            <div class="destino-precio">
-              <span>Desde</span>
-              <strong>€129</strong>
-            </div>
-          </div>
-        </article>
-
-        <article class="destino-card">
-          <div class="destino-icon">🏖</div>
-          <div class="destino-info">
-            <h3>Riviera Maya, Méjico</h3>
-            <p>Playas cristalinas y cultura maya en un paraíso terrenal.</p>
-            <div class="destino-precio">
-              <span>Desde</span>
-              <strong>€549</strong>
-            </div>
-          </div>
-        </article>
-
-        <article class="destino-card">
-          <div class="destino-icon">💎</div>
-          <div class="destino-info">
-            <h3>París, Francia</h3>
-            <p>La ciudad del amor, la luz y la haute couture te esperan.</p>
-            <div class="destino-precio">
-              <span>Desde</span>
-              <strong>€89</strong>
-            </div>
-          </div>
-        </article>
-
-        <article class="destino-card">
-          <div class="destino-icon">🌴</div>
-          <div class="destino-info">
-            <h3>Rio de Janeiro, Brasil</h3>
-            <p>Samba, carnaval y la famosa estatua del Cristo Redentor.</p>
-            <div class="destino-precio">
-              <span>Desde</span>
-              <strong>€519</strong>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- Beneficios -->
-    <section id="beneficios" class="beneficios">
-      <h2>¿Por qué volar con nosotros?</h2>
-      <p class="section-subtitle">Una experiencia de vuelo inigualable</p>
-
-      <div class="beneficios-grid">
-
-        <div class="beneficio-item">
-          <div class="beneficio-icon">✈</div>
-          <h3>Flota Vintage de Lujo</h3>
-          <p>Aviones restaurados con el encanto de la época dorada de la aviación.</p>
-        </div>
-
-        <div class="beneficio-item">
-          <div class="beneficio-icon">🍽</div>
-          <h3>Gastronomía Premium</h3>
-          <p>Menús diseñados por chefs con estrella Michelin a 30.000 pies.</p>
-        </div>
-
-        <div class="beneficio-item">
-          <div class="beneficio-icon">💵</div>
-          <h3>Mejor Precio Garantizado</h3>
-          <p>Tarifa competitiva con opción de pago flexible en hasta 12 cuotas.</p>
-        </div>
-
-        <div class="beneficio-item">
-          <div class="beneficio-icon">⭐</div>
-          <h3>Programa de Millas</h3>
-          <p>Acumula puntos en cada vuelo y canjéalos por experiencias únicas.</p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Banner CTA -->
-    <section class="cta-banner">
-      <h2>¿Listo para tu próxima aventura?</h2>
-      <p>Reserva hoy y obtén un 15% de descuento en tu primer vuelo</p>
-      <a href="#buscador" class="btn-cta">Reservar Ahora</a>
-    </section>
+    
 
   </main>
 
   <footer>
-    <div class="footer-content">
-      <div class="footer-col">
-        <h4>Air Europa Vintage</h4>
-        <p>Reviviendo la elegancia de la aviación clásica desde 1986. Tu viaje comienza con estilo.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Destinos</h4>
-        <p>Europa<br>América del Norte<br>América del Sur<br>África</p>
-      </div>
-      <div class="footer-col">
-        <h4>Información</h4>
-        <p>Sobre nosotros<br>Condiciones de viaje<br>Política de privacidad<br>Contacto</p>
-      </div>
-      <div class="footer-col">
-        <h4>Contacto</h4>
-        <p>+34 900 123 456<br>info@aireuropavintage.com<br>Madrid, España</p>
-      </div>
-    </div>
-    <hr>
-    <p class="copyright">© 2026 Air Europa Vintage Clone. Todos los derechos reservados.</p>
+ 
   </footer>
 
 </body>
