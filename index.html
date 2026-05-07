@@ -3,54 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Air Europa Vintage </title> 
+  <title>Air Europa Vintage</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+  <!-- NAVBAR -->
   <header>
-    <h1>Air Europa <small>Vintage edition</small></h1>
     <nav>
-        <a href="index.html">Inicio</a>
-        <a href="mis-viajes.html">Mis Viajes</a>
-        <button>Crear Cuenta</button>
-        <button>Iniciar Sesión</button>
+      <a href="mis-viajes.html">Mis Viajes</a>
+      <span class="nav-separador">|</span>
+      <a href="#">Iniciar Sesión</a>
+      <span class="nav-separador">|</span>
+      <a href="#">Crear Cuenta</a>
     </nav>
   </header>
 
   <main>
 
+    <!-- HERO TIPOGRÁFICO -->
+    <section class="hero">
+      <h1 class="hero-titulo">
+        <span class="titulo-linea1">AIR</span>
+        <span class="titulo-linea2">EUROPA</span>
+      </h1>
+    </section>
+
+    <!-- BUSCADOR -->
     <section id="buscador">
-        <h2>Busca tu vuelo</h2>
-        <form action="resultados.html">
-            <input type="text" placeholder="Origen" list="ciudades" required>
-            <input type="text" placeholder="Destino" list="ciudades" required>
-            <input type="date" name="salida">
-            <input type="date" name="regreso">
-            <button type="submit">Buscar Vuelos</button>
-        </form>
+      <form action="resultados.html">
+        <input type="text" placeholder="Origen" list="ciudades" required />
+        <input type="text" placeholder="Destino" list="ciudades" required />
+        <input type="date" name="salida" />
+        <input type="date" name="regreso" />
+        <button type="submit">Buscar Vuelos</button>
+      </form>
     </section>
 
     <datalist id="ciudades">
-        <option value="Buenos Aires">
-        <option value="Nueva York">
-        <option value="Madrid">
-        <option value="Roma">
-        <option value="San Pablo">
-        <option value="Lima">
-        <option value="Santiago de Chile">
-        <option value="Bogotá">
-        <option value="Berlín">
-        <option value="Milán">
-        <option value="Barcelona">
+      <option value="Madrid">
+      <option value="Roma">
+      <option value="Barcelona">
+      <option value="Buenos Aires">
+      <option value="Berlín">
+      <option value="París">
+      <option value="Londres">
     </datalist>
-
-    
 
   </main>
 
   <footer>
- 
+    &copy; 2026 Air Europa Clone &mdash;
   </footer>
 
 </body>
