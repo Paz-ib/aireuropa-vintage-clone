@@ -23,13 +23,27 @@
     <section id="buscador">
         <h2>Busca tu vuelo</h2>
         <form action="resultados.html">
-            <input type="text" placeholder="Origen" required>
-            <input type="text" placeholder="Destino" required>
+            <input type="text" placeholder="Origen" list="ciudades" required>
+            <input type="text" placeholder="Destino" list="ciudades" required>
             <input type="date" name="salida">
             <input type="date" name="regreso">
             <button type="submit">Buscar Vuelos</button>
         </form>
     </section>
+
+    <datalist id="ciudades">
+        <option value="Buenos Aires">
+        <option value="Nueva York">
+        <option value="Madrid">
+        <option value="Roma">
+        <option value="San Pablo">
+        <option value="Lima">
+        <option value="Santiago de Chile">
+        <option value="Bogotá">
+        <option value="Berlín">
+        <option value="Milán">
+        <option value="Barcelona">
+    </datalist>
 
     
 
