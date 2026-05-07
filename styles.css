@@ -1,0 +1,224 @@
+/* ================================================
+   AIR EUROPA — VINTAGE EDITION
+   Inspirado en: Retro Haus (Pinterest)
+   Paleta: crema, azul cobalto, marrón oscuro
+   ================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Special+Elite&family=Lato:wght@300;400;700&display=swap');
+
+/* ---- VARIABLES ---- */
+:root {
+  --crema:        #f5f0e8;
+  --crema-osc:    #ede5d0;
+  --azul:         #2b5fc9;
+  --azul-osc:     #1a3fa0;
+  --marron:       #2c1a0e;
+  --marron-med:   #5c3520;
+  --blanco:       #ffffff;
+  --sombra-texto: 6px 6px 0px var(--marron);
+  --borde:        3px solid var(--marron);
+}
+
+/* ---- RESET ---- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--crema);
+  color: var(--marron);
+  font-family: 'Lato', sans-serif;
+  min-height: 100vh;
+}
+
+/* ================================================
+   HEADER / NAVBAR
+   — borde inferior fino, links alineados a la derecha
+   ================================================ */
+header {
+  border-bottom: var(--borde);
+  padding: 14px 40px;
+  background-color: var(--crema);
+}
+
+header nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 14px;
+}
+
+header nav a {
+  font-family: 'Special Elite', cursive;
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--marron);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+header nav a:hover {
+  color: var(--azul);
+}
+
+.nav-separador {
+  color: var(--marron-med);
+  font-size: 0.9rem;
+  opacity: 0.5;
+}
+
+/* ================================================
+   HERO — TIPOGRAFÍA BOLD RETRO
+   Replica el estilo "RETRO HAUS" de la referencia:
+   letras enormes, azul con sombra marrón, fondo crema
+   ================================================ */
+.hero {
+  padding: 48px 40px 0 40px;
+  border-bottom: var(--borde);
+  background-color: var(--crema);
+  overflow: hidden;
+}
+
+.hero-titulo {
+  display: flex;
+  flex-direction: column;
+  line-height: 0.88;
+  user-select: none;
+  gap: 16px;
+  padding-bottom: 48px;
+}
+
+/* Ambas líneas comparten el estilo base */
+.titulo-linea1,
+.titulo-linea2 {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(4rem, 14vw, 10rem);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+
+  /* Relleno azul + sombra marrón desplazada — efecto 3D retro */
+  color: var(--azul);
+  -webkit-text-stroke: 3px var(--marron);
+  text-shadow:
+    5px 5px 0 var(--marron),
+    6px 6px 0 var(--marron);
+
+  display: block;
+}
+
+/* ================================================
+   SECCIÓN BUSCADOR
+   — fondo crema oscuro, borde superior, inputs retro
+   ================================================ */
+#buscador {
+  background-color: var(--crema-osc);
+  border-top: var(--borde);
+  padding: 44px 40px;
+}
+
+#buscador form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: stretch;
+}
+
+#buscador input {
+  font-family: 'Special Elite', cursive;
+  font-size: 0.88rem;
+  letter-spacing: 0.06em;
+  padding: 13px 18px;
+  background: var(--crema);
+  color: var(--marron);
+  border: var(--borde);
+  border-radius: 0;
+  outline: none;
+  flex: 1;
+  min-width: 150px;
+
+  /* Sombra desplazada retro */
+  box-shadow: 3px 3px 0 var(--marron);
+  transition: box-shadow 0.15s, transform 0.15s;
+}
+
+#buscador input::placeholder {
+  color: var(--marron-med);
+  opacity: 0.6;
+  font-style: italic;
+}
+
+#buscador input:focus {
+  box-shadow: 5px 5px 0 var(--marron);
+  transform: translate(-1px, -1px);
+}
+
+#buscador input[type="date"] {
+  color-scheme: light;
+  min-width: 160px;
+}
+
+#buscador button[type="submit"] {
+  font-family: 'Anton', sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 13px 36px;
+  background: var(--marron);
+  color: var(--crema);
+  border: var(--borde);
+  border-radius: 0;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 var(--marron-med);
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+
+#buscador button[type="submit"]:hover {
+  background: var(--azul);
+  color: var(--blanco);
+  box-shadow: 5px 5px 0 var(--marron);
+  transform: translate(-1px, -1px);
+}
+
+#buscador button[type="submit"]:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--marron);
+}
+
+/* ================================================
+   FOOTER
+   ================================================ */
+footer {
+  border-top: var(--borde);
+  padding: 20px 40px;
+  background: var(--crema);
+  font-family: 'Special Elite', cursive;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--marron-med);
+  text-align: center;
+}
+
+/* ================================================
+   RESPONSIVE
+   ================================================ */
+@media (max-width: 640px) {
+  header { padding: 12px 20px; }
+
+  .hero { padding: 32px 20px 0 20px; }
+
+  #buscador { padding: 32px 20px; }
+
+  #buscador form { flex-direction: column; }
+
+  #buscador input,
+  #buscador button[type="submit"] {
+    width: 100%;
+    flex: none;
+  }
+}
