@@ -4,14 +4,14 @@
    Paleta: crema, azul cobalto, marrón oscuro
    ================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Special+Elite&family=Lato:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Playfair+Display:ital@1&family=Special+Elite&family=Lato:wght@300;400;700&display=swap');
 
 /* ---- VARIABLES ---- */
 :root {
   --crema:        #f5f0e8;
   --crema-osc:    #ede5d0;
-  --azul:         #2b5fc9;
-  --azul-osc:     #1a3fa0;
+  --azul:         #6a9bc0;
+  --azul-osc:     #3e7299;
   --marron:       #2c1a0e;
   --marron-med:   #5c3520;
   --blanco:       #ffffff;
@@ -80,6 +80,35 @@ header nav a:hover {
   border-bottom: var(--borde);
   background-color: var(--crema);
   overflow: hidden;
+  position: relative;
+}
+
+.hero::before,
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.4;
+  z-index: 0;
+}
+
+.hero::before {
+  left: 0;
+  background-image: url('img/avion1.jpg');
+}
+
+.hero::after {
+  right: 0;
+  background-image: url('img/avion2.jpg');
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-titulo {
@@ -89,6 +118,17 @@ header nav a:hover {
   user-select: none;
   gap: 16px;
   padding-bottom: 48px;
+}
+
+.hero-subtitulo {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--marron);
+  letter-spacing: 0.1em;
+  margin-top: 8px;
+  margin-bottom: 40px;
 }
 
 /* Ambas líneas comparten el estilo base */
@@ -190,6 +230,201 @@ header nav a:hover {
 }
 
 /* ================================================
+   DESTINOS RECOMENDADOS
+   ================================================ */
+.destinos-seccion {
+  padding: 48px 40px;
+}
+
+.destinos-titulo {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--marron);
+  margin-bottom: 40px;
+  border-bottom: var(--borde);
+  padding-bottom: 12px;
+}
+
+.destinos-grilla {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.tag {
+  background: var(--crema);
+  border: var(--borde);
+  border-radius: 12px 12px 8px 8px;
+  box-shadow: 5px 5px 0 var(--marron), 0 8px 24px rgba(0,0,0,0.15);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.tag:hover {
+  transform: translate(-3px, -3px) rotate(-1deg);
+  box-shadow: 8px 8px 0 var(--marron);
+}
+
+.tag-agujero-wrap {
+  background: var(--crema-osc);
+  border-bottom: 2px solid var(--marron);
+  padding: 10px 14px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.tag-numero {
+  font-family: 'Special Elite', cursive;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--marron);
+}
+
+.tag-codigo {
+  font-family: 'Special Elite', cursive;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: var(--marron);
+  text-align: right;
+}
+
+.tag-agujero {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--crema);
+  border: 2px solid var(--marron);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.tag-tornillo {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--marron);
+  box-shadow: inset 0 1px 2px rgba(255,255,255,0.3);
+}
+
+.tag-cuerpo.azul {
+  background: var(--azul);
+  padding: 20px 16px 16px;
+  border-bottom: var(--borde);
+  text-align: center;
+}
+
+.tag-iata {
+  font-family: 'Anton', sans-serif;
+  font-size: 3.8rem;
+  line-height: 1;
+  color: var(--blanco);
+  letter-spacing: 0.04em;
+  text-shadow: 3px 3px 0 var(--azul-osc);
+}
+
+.tag-ciudad {
+  font-family: 'Anton', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  color: var(--blanco);
+  margin-top: 4px;
+  opacity: 0.9;
+}
+
+.tag-pie.crema {
+  background: var(--crema);
+  padding: 16px 16px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tag-oferta-label {
+  font-family: 'Special Elite', cursive;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--azul);
+}
+
+.tag-precio {
+  font-family: 'Anton', sans-serif;
+  font-size: 2rem;
+  color: #c0392b;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+}
+
+.tag-precio span {
+  font-family: 'Special Elite', cursive;
+  font-size: 0.85rem;
+  color: var(--marron);
+  letter-spacing: 0.1em;
+  vertical-align: middle;
+}
+
+.tag-condicion {
+  font-family: 'Special Elite', cursive;
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  color: var(--marron);
+  opacity: 0.75;
+  margin-bottom: 10px;
+}
+
+.tag-logo {
+  font-family: 'Anton', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: var(--azul-osc);
+  border-top: 1px solid var(--crema-osc);
+  padding-top: 8px;
+  margin-top: 4px;
+}
+
+.tag-logo span {
+  font-size: 0.5rem;
+  vertical-align: super;
+}
+
+.tag-sorting {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+  border-top: 1px dashed var(--crema-osc);
+  padding-top: 8px;
+}
+
+.tag-arrow {
+  font-family: 'Special Elite', cursive;
+  font-size: 0.55rem;
+  letter-spacing: 0.1em;
+  color: var(--marron);
+  opacity: 0.6;
+  text-transform: uppercase;
+}
+
+.tag-letra {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.8rem;
+  color: var(--azul);
+  line-height: 1;
+  opacity: 0.85;
+}
+
+/* ================================================
    FOOTER
    ================================================ */
 footer {
@@ -202,6 +437,145 @@ footer {
   text-transform: uppercase;
   color: var(--marron-med);
   text-align: center;
+}
+
+/* ================================================
+   PÁGINAS INTERNAS
+   ================================================ */
+.page-content {
+  padding: 48px 40px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.page-content h2 {
+  font-family: 'Anton', sans-serif;
+  font-size: 2rem;
+  color: var(--marron);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 32px;
+  padding-bottom: 12px;
+  border-bottom: var(--borde);
+}
+
+.page-content p {
+  font-family: 'Special Elite', cursive;
+  color: var(--marron);
+  margin-bottom: 20px;
+}
+
+.form-retro {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 500px;
+}
+
+.form-retro input {
+  font-family: 'Special Elite', cursive;
+  font-size: 0.9rem;
+  padding: 14px 18px;
+  background: var(--crema);
+  color: var(--marron);
+  border: var(--borde);
+  border-radius: 0;
+  outline: none;
+  box-shadow: 3px 3px 0 var(--marron);
+  transition: box-shadow 0.15s, transform 0.15s;
+}
+
+.form-retro input::placeholder {
+  color: var(--marron-med);
+  opacity: 0.6;
+  font-style: italic;
+}
+
+.form-retro input:focus {
+  box-shadow: 5px 5px 0 var(--marron);
+  transform: translate(-1px, -1px);
+}
+
+.form-retro button {
+  font-family: 'Anton', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 14px 36px;
+  background: var(--marron);
+  color: var(--crema);
+  border: var(--borde);
+  border-radius: 0;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 var(--marron-med);
+  transition: all 0.15s;
+  width: fit-content;
+}
+
+.form-retro button:hover {
+  background: var(--azul);
+  color: var(--blanco);
+  box-shadow: 5px 5px 0 var(--marron);
+  transform: translate(-1px, -1px);
+}
+
+.form-retro button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--marron);
+}
+
+.total-pagar {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.5rem;
+  color: #c0392b;
+}
+
+.vuelo-card {
+  background: var(--crema-osc);
+  border: var(--borde);
+  padding: 24px;
+  margin-bottom: 16px;
+  box-shadow: 4px 4px 0 var(--marron);
+}
+
+.vuelo-ruta {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.4rem;
+  color: var(--marron);
+  margin-bottom: 8px;
+}
+
+.vuelo-precio {
+  font-family: 'Special Elite', cursive;
+  font-size: 1rem;
+  color: var(--marron);
+  margin-bottom: 16px;
+}
+
+.btn {
+  font-family: 'Anton', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 10px 24px;
+  background: var(--azul);
+  color: var(--blanco);
+  border: var(--borde);
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 3px 3px 0 var(--marron);
+  transition: all 0.15s;
+}
+
+.btn:hover {
+  background: var(--marron);
+  color: var(--crema);
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 var(--marron);
+}
+
+#detalle-reserva {
+  margin-top: 24px;
 }
 
 /* ================================================
@@ -221,4 +595,17 @@ footer {
     width: 100%;
     flex: none;
   }
+
+  .destinos-seccion { padding: 32px 20px; }
+
+  .destinos-grilla {
+    grid-template-columns: 1fr;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .page-content { padding: 32px 20px; }
+
+  .form-retro input,
+  .form-retro button { width: 100%; }
 }

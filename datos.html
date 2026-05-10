@@ -9,27 +9,29 @@
 <body>
 
   <header>
-    <h1>Air Europa <small>Vintage edition</small></h1>
     <nav>
-        <a href="index.html">Inicio</a>
-        <a href="mis-viajes.html">Mis Viajes</a>
-        <button>Crear Cuenta</button>
-        <button>Iniciar Sesión</button>
+      <a href="index.html">Inicio</a>
+      <span class="nav-separador">|</span>
+      <a href="#">Iniciar Sesión</a>
+      <span class="nav-separador">|</span>
+      <a href="#">Crear Cuenta</a>
     </nav>
   </header>
 
   <main>
-    <h2>Datos del Pasajero</h2>
-    <form action="pago.html">
-        <input type="text" placeholder="Nombre completo" required>
-        <input type="text" placeholder="DNI / Pasaporte" required>
-        <input type="email" placeholder="Email de contacto" required>
+    <section class="page-content">
+      <h2>Datos del Pasajero</h2>
+      <form action="pago.html" class="form-retro">
+        <input type="text" placeholder="Nombre completo" required />
+        <input type="text" placeholder="DNI / Pasaporte" required />
+        <input type="email" placeholder="Email de contacto" required />
         <button type="submit">Ir al pago</button>
-    </form>
+      </form>
+    </section>
   </main>
 
   <footer>
-
+    &copy; 2026 Air Europa Clone &mdash; Proyecto académico
   </footer>
 
 </body>
